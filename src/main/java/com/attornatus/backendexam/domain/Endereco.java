@@ -9,16 +9,19 @@ public class Endereco {
     private Integer id;
     @Column
     private String logradouro;
-      @Column
+    @Column
     private String CEP;
     @Column
     private String numero;
     @Column
     private String cidade;
     @ManyToOne
+    //@JoinColumn(name = "pessoaId",referencedColumnName = "id")
     private Pessoa pessoa;
     @Column
     private boolean principal;
+
+
 
 
 

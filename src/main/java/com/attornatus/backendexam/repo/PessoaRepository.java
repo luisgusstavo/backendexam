@@ -1,8 +1,11 @@
 package com.attornatus.backendexam.repo;
 
+import com.attornatus.backendexam.domain.Endereco;
 import com.attornatus.backendexam.domain.Pessoa;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
+
+import java.util.Optional;
 
 /**
  * Repositório de Pessoas
@@ -17,6 +20,8 @@ public interface PessoaRepository extends CrudRepository<Pessoa,Integer> {
     @Override
     @RestResource(exported = false)
     boolean existsById(Integer integer);
+
+
 
     @Override
     @RestResource(exported = false)
@@ -41,5 +46,11 @@ public interface PessoaRepository extends CrudRepository<Pessoa,Integer> {
     @Override
     @RestResource(exported = false)
     void deleteAll();
+
+
+
+
+
+
 
 }

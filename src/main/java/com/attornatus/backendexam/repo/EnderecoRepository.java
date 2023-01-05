@@ -3,6 +3,7 @@ package com.attornatus.backendexam.repo;
 import com.attornatus.backendexam.domain.Endereco;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -21,7 +22,7 @@ public interface EnderecoRepository extends CrudRepository<Endereco,Integer> {
      * @param id Id da Pessoa
      * @return List&lt;Endereco&gt; Lista de Endereços
      */
-    List<Endereco> findByPessoaId(Integer id);
+    List<Endereco> findByPessoaId(@Param("id")Integer id);
 
     /**
      * Informa o endereço principal de uma pessoa
@@ -62,4 +63,6 @@ public interface EnderecoRepository extends CrudRepository<Endereco,Integer> {
     @Override
     @RestResource(exported = false)
     void deleteAll();
+
+
 }
